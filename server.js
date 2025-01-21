@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist/digital_waiter')));
+app.use(express.static(path.join(__dirname, 'dist/digital_waiter/browser')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/digital_waiter/browser/index.html'));
