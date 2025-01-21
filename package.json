@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
-  "postinstall": "npm run build",
+    "postinstall": "npm install --omit=dev && npm run build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
