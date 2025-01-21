@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve dist -p $PORT",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -20,6 +20,7 @@
     "@angular/router": "^17.3.0",
     "esbuild": "^0.24.2",
     "rxjs": "~7.8.0",
+    "serve": "^14.2.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
