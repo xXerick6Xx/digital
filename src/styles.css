@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+.login-container,
+.register-container,
+.dashboard-container,
+.inventory-container,
+.user-management-container,
+.menu-management-container,
+.table-management-container,
+.order-management-container,
+.order-list-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

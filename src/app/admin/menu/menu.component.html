@@ -1,0 +1,52 @@
+<div class="navbar">
+  <div class="logo">
+    <img src="../../../assets/iconedigital.jpeg" alt="Logo" class="navbar-logo"> Digital Waiter
+  </div>
+  <input type="text" placeholder="Buscar..." class="search-bar" />
+  <div class="icons">
+    <span class="bell-icon">🔔</span>
+    <div class="user-info">
+      <span class="user-icon">
+        <img src="../../../assets/images.png" alt="Usuario" class="user-img"> Usuario
+      </span>
+    </div>
+  </div>
+</div>
+  
+<div class="admin-dashboard">
+  <div class="sidebar">
+    <div class="logo_digital">
+      <img src="assets/digitalwaiter.png" alt="Logo Digital Waiter" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/users">Gestión de usuarios</a></li>
+        <li><a href="/admin/menu">Gestión de menús</a></li>
+        <li><a href="/admin/products">Gestión de personal</a></li>
+        <li><a href="/admin/provedores">Gestión de proveedores</a></li>
+        <li><a href="/admin/inventory">Control de inventario</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="gestion-menu">
+      <h2>Gestión de Menú</h2>
+      <div class="gestion-menu-container">
+        <div class="menu-categorias">
+          <h3>Categoría(s) existente(s)</h3>
+          <button class="btn-agregar" (click)="goToMenu2()">Agregar</button>
+        </div>
+        <div class="categorias">
+          <div *ngFor="let categoria of categorias" class="categoria" (click)="goToMenuPlato(categoria)">
+            <img [src]="categoria.imagen" alt="{{ categoria.nombre }}" />
+            <span>{{ categoria.nombre }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+    

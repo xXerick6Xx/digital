@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    height: 100%;  /* Asegura que el body y html ocupen toda la altura de la ventana */
+  }
+  
+  
+  
+  .login-container {
+    flex: 1;                /* Ocupa el 50% del ancho de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .background-image {
+    flex: 1;                /* Ocupa el 50% restante del ancho de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* La imagen cubre todo el área sin deformarse */
+  }
+  
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-title {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    display: block;
+  }
+  
+  input {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 0.75em;
+    background-color: #00bfa5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  
+  .button-secondary {
+    background-color: #00bfa5;
+  }
+  

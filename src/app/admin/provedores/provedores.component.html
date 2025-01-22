@@ -1,0 +1,94 @@
+<div class="navbar">
+    <div class="logo">Digital Waiter</div>
+    <input type="text" placeholder="Buscar..." class="search-bar" />
+    <div class="icons">
+        <span class="bell-icon">🔔</span>
+        <div class="user-info">
+            <span class="user-icon">Usuario</span>
+            <div class="user-profile">
+                <img src="assets/images.png" alt="User Profile" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="admin-dashboard">
+    <div class="sidebar">
+        <div class="logo_digital">
+            <img src="assets/digitalwaiter.png" alt="Logo Digital Waiter" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/admin/dashboard">Dashboard</a></li>
+                <li><a href="/admin/users">Gestión de usuarios</a></li>
+                <li><a href="/admin/menu">Gestión de menús</a></li>
+                <li><a href="/admin/products">Gestión de personal</a></li>
+                <li><a href="/admin/provedores">Gestión de proveedores</a></li>
+                <li><a href="/admin/inventory">Control de inventario</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <!-- Contenedor para el título y el botón "Agregar Proveedor" -->
+        <div class="gestion-container">
+            <h2>Gestión de Proveedores</h2>
+            <button class="btn-agregar" id="agregarProveedorBtn">Agregar Proveedor</button>
+        </div>
+
+        <!-- Tabla de Proveedores -->
+        <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Tipo de Proveedor</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pronaca</td>
+                <td>examplegmail.com</td>
+                <td>0972547130</td>
+                <td>Proveedor de Alimentos</td>
+                <td class="acciones">
+                  <button class="btn editar">Editar</button>
+                  <button class="btn eliminar">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Fontana</td>
+                <td>examplegmail.com</td>
+                <td>09803485110</td>
+                <td>Proveedor de Bebidas</td>
+                <td class="acciones">
+                  <button class="btn editar">Editar</button>
+                  <button class="btn eliminar">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Computron</td>
+                <td>examplegmail.com</td>
+                <td>0992321750</td>
+                <td>Proveedor de Equipos</td>
+                <td class="acciones">
+                  <button class="btn editar">Editar</button>
+                  <button class="btn eliminar">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Rustica S.A.</td>
+                <td>examplegmail.com</td>
+                <td>0992879456</td>
+                <td>Proveedor de Mobiliario</td>
+                <td class="acciones">
+                  <button class="btn editar">Editar</button>
+                  <button class="btn eliminar">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

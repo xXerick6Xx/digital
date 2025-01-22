@@ -1,0 +1,110 @@
+
+<div class="navbar">
+    <div class="logo">Digital Waiter</div>
+    <input type="text" placeholder="Buscar..." class="search-bar" />
+    <div class="icons">
+        <span class="bell-icon">🔔</span>
+        <div class="user-info">
+            <span class="user-icon">Usuario</span>
+            <div class="user-profile">
+                <img src="assets/images.png" alt="User Profile" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="admin-dashboard">
+    <div class="sidebar">
+        <div class="logo_digital">
+            <img src="assets/digitalwaiter.png" alt="User Profile" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/admin/dashboard">Dashboard</a></li>
+                <li><a href="/admin/users">Gestión de usuarios</a></li>
+                <li><a href="/admin/menu">Gestión de menús</a></li>
+                <li><a href="/admin/products">Gestión de personal</a></li>
+                <li><a href="/admin/suppliers">Gestión de proveedores</a></li>
+                <li><a href="/admin/inventory">Control de inventario</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="user-management">
+        <h2>GESTIÓN DE USUARIOS</h2>
+        <button class="new-user-btn" (click)="showForm = true">+ Nuevo</button>
+        <div class="modal" *ngIf="showForm">
+          <div class="modal-content">
+            <h3>Nuevo Usuario</h3>
+            <form (ngSubmit)="addUser()">
+              <label for="name">Nombre:</label><br>
+              <input id="name" [(ngModel)]="newUser.name" name="name" required /><br>
+        
+              <label for="address">Correo Electrónico:</label><br>
+              <input id="email" type="email" [(ngModel)]="newUser.email" name="email" required /><br>
+
+              <label for="password">Contraseña:</label><br>
+              <input id="password" type="password" [(ngModel)]="newUser.password" name="password" required /><br>
+
+              <label for="phone">Teléfono:</label><br>
+              <input id="phone" [(ngModel)]="newUser.phone" name="phone" required /><br>
+        
+              <label for="email">Dirección:</label><br>
+              <input id="address" [(ngModel)]="newUser.address" name="address" required /><br>
+        
+              <label for="role">Rol de Usuario:</label><br>
+              <select id="role" [(ngModel)]="newUser.role" name="role" required>
+                <option value="Administrador">Administrador</option>
+                <option value="Cocina">Cocinero</option>
+                <option value="Mesero">Mesero</option>
+              </select>
+        
+              <div class="modal-actions">
+                <button type="submit" class="save-btn">Guardar</button>
+                <button type="button" class="cancel-btn" (click)="closeForm()">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="search-bar">
+          <input type="text" placeholder="BUSCAR..." [(ngModel)]="searchText" />
+          <button class="search-btn">🔍</button>
+        </div>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filteredUsers(); let i = index">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.address }}</td>
+              <td>{{ user.role }}</td>
+              <td>
+                <button class="edit-btn" >✏️</button>
+                <button class="delete-btn">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      
+        <div class="pagination">
+          <button (click)="previousPage()">Anterior</button>
+          <span>{{ currentPage }}</span>
+          <button (click)="nextPage()">Siguiente</button>
+        </div>
+      </div>
+</div>
+

@@ -1,0 +1,144 @@
+<div class="navbar">
+  <div class="logo">
+    <img src="../../../assets/iconedigital.jpeg" alt="Logo" class="navbar-logo"> Digital Waiter
+  </div>
+  <input type="text" placeholder="Buscar..." class="search-bar" />
+  <div class="icons">
+    <span class="bell-icon">🔔</span>
+    <div class="user-info">
+      <span class="user-icon">
+        <img src="../../../assets/images.png" alt="Usuario" class="user-img"> Usuario
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="admin-dashboard">
+  <div class="sidebar">
+    <div class="logo_digital">
+      <img src="assets/digitalwaiter.png" alt="Logo Digital Waiter" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/users">Gestión de usuarios</a></li>
+        <li><a href="/admin/menu">Gestión de menús</a></li>
+        <li><a href="/admin/products">Gestión de personal</a></li>
+        <li><a href="/admin/provedores">Gestión de proveedores</a></li>
+        <li><a href="/admin/inventory">Control de inventario</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="gestion-menu">
+      <h2>Gestión de Menú</h2>
+      <div class="gestion-menu-container">
+        <div class="menu-categorias">
+          <h3>Categoría(s) existente(s)</h3>
+          <button class="btn-agregar">Agregar</button>
+        </div>
+        <div class="categorias">
+          <div class="categoria">
+            <img src="../../../assets/entradas.png" alt="Entradas">
+            <span>Entradas</span>
+          </div>
+          <div class="categoria">
+            <img src="../../../assets/postre.jpeg" alt="Postres">
+            <span>Postres</span>
+          </div>
+          <div class="categoria">
+            <img src="../../../platosfuertes.jpeg" alt="Platos fuertes">
+            <span>Platos fuertes</span>
+          </div>
+          <div class="categoria">
+            <img src="../../../assets/aperitivos.jpg" alt="Aperitivos">
+            <span>Aperitivos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de Crear Categoría -->
+    <div class="form-container">
+      <h2>Crear Categoría</h2>
+      <form (submit)="guardarCategoria()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="categoria">Nombre de la Categoría</label>
+            <input
+              type="text"
+              id="categoria"
+              name="categoria"
+              [(ngModel)]="nuevaCategoria.nombre"
+              placeholder="Escribe el nombre de la categoría"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado</label>
+            <input
+              type="text"
+              id="estado"
+              name="estado"
+              [(ngModel)]="nuevaCategoria.estado"
+              placeholder="Estado de la categoría"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <input
+              type="text"
+              id="descripcion"
+              name="descripcion"
+              [(ngModel)]="nuevaCategoria.descripcion"
+              placeholder="Escribe una descripción de la categoría"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="tipo_categoria">Tipo de Categoría</label>
+            <input
+              type="text"
+              id="tipo_categoria"
+              name="tipo_categoria"
+              [(ngModel)]="nuevaCategoria.tipo_categoria"
+              placeholder="Tipo de categoría"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input
+              type="file"
+              id="imagen"
+              name="imagen"
+              (change)="onImageChange($event)"
+              required
+            />
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button type="submit">Guardar Categoría</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Notificación (condicional) -->
+    <div *ngIf="mostrarNotificacion" class="notificacion">
+      <div class="notificacion-caja">
+        <h3>Operación Exitosa</h3>
+        <p>¡Categoría creada!</p>
+        <button class="btn-aceptar" (click)="mostrarNotificacion = false">Aceptar</button>
+      </div>
+    </div>
+  </main>
+</div>
